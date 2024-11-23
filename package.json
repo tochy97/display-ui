@@ -1,5 +1,5 @@
 {
-  "name": "@egeonu/react-display",
+  "name": "@egeonu/responsive-react",
   "version": "0.1.0",
   "main": "src/index.tsx",
   "files": [
@@ -31,7 +31,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --detectOpenHandles",
+    "test": "react-scripts test --watchAll",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
