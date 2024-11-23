@@ -1,4 +1,4 @@
-import { container } from "./model/classNames";
+import { container } from "./classNames";
 import { GET_CONTENT } from "../apollo/queries";
 import ContentController from "../apollo/controller";
 import { ReactNode, useState } from "react";

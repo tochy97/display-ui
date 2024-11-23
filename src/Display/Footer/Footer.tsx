@@ -5,7 +5,7 @@ import {
 } from "react-icons/ai";
 import { VscGithub } from "react-icons/vsc";
 
-import { footerContainer, footerIcon } from "./model/classNames";
+import { footerContainer, footerIcon } from "./classNames";
 import { ExternalPage, InternalPage } from "../../type";
 
 type Props = {

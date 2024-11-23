@@ -1,7 +1,6 @@
 import React, { createRef, ReactNode, RefObject, useEffect, useRef, useState } from 'react'
 
-import { closeButton, pageDivider } from './model/classNames';
-import { modalContainer, modalContentContainer, modalHeaderContainer } from './model/classNames';
+import { modalContainer, modalContentContainer, modalHeaderContainer, closeButton, pageDivider } from './classNames';
 
 type Props = {
   enableOnClick: boolean;

@@ -38,8 +38,20 @@ let list: Array<InternalPage> = [
 
 ]
 
-it('Display', async () => {
+it('Display: Content', async () => {
     await act(async () => render(<Display contentList={list} title={'Test'} footerList={[]} />));
-
     expect(screen.getByText('Display.test.Home')).toBeInTheDocument();
+});
+
+it('Display: Nav', async () => {
+    await act(async () => render(<Display contentList={list} title={'Test'} footerList={[]} />));
+    expect(screen.getByText('Test')).toBeInTheDocument();
+    expect(screen.getByRole('navComponent0')).toBeInTheDocument();
+    expect(screen.getByRole('navComponent1')).toBeInTheDocument();
+    expect(screen.getByRole('navComponent2')).toBeInTheDocument();
+});
+
+it('Display: Footer', async () => {
+    await act(async () => render(<Display contentList={list} title={'Test'} footerList={[]} />));
+    expect(screen.getByText('Test')).toBeInTheDocument();
 });
