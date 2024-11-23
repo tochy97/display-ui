@@ -1,5 +1,5 @@
 {
-  "name": "@egeonu/display-ui",
+  "name": "@egeonu/react-display",
   "version": "0.1.0",
   "main": "src/index.tsx",
   "files": [
