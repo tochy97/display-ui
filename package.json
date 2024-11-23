@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@apollo/client": "^3.11.10",
+    "@babel/plugin-proposal-private-property-in-object": "^7.16.7",
     "@egeonu/display-ui": "file:",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/user-event": "^13.5.0",
@@ -18,15 +19,16 @@
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "autoprefixer": "^10.4.20",
+    "graphql": "^16.9.0",
     "postcss": "^8.4.49",
+    "ra-data-graphql": "^5.4.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-icons": "^5.3.0",
     "react-scripts": "5.0.1",
     "tailwindcss": "^3.4.15",
     "typescript": "^4.9.5",
-    "web-vitals": "^2.1.4",
-        "@babel/plugin-proposal-private-property-in-object": "^7.16.7"
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -53,6 +55,7 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/dom": "^10.4.0",
     "@testing-library/react": "^16.0.1"
   }
 }
