@@ -1,19 +1,4 @@
-import Nav from './Nav/Nav'
-import Content from './Content/Content'
-import Footer from './Footer/Footer'
-import { PageList } from "./type";
+import Display from "./Display/Display";
 
-type Props = {
-  pageList: PageList,
-  title: string
-}
-
-export default function index({pageList, title}: Props) {
-  return (
-    <div>
-      <Nav pageList={pageList} title={title}/>
-      <Content pageList={pageList}/>
-      <Footer />
-    </div>
-  )
-}
+export default Display;
+export { default as Modal } from  "./Modal/Modal";

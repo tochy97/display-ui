@@ -6,10 +6,13 @@ import {
 import { VscGithub } from "react-icons/vsc";
 
 import { footerContainer, footerIcon } from "./model/classNames";
+import { ExternalPage, InternalPage } from "../../type";
 
-type Props = {};
+type Props = {
+  list: Array<InternalPage | ExternalPage>
+};
 
-export default function Footer({}: Props) {
+export default function Footer({ list }: Props) {
   return (
     <footer className={footerContainer}>
       <a

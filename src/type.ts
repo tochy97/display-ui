@@ -1,13 +1,16 @@
 import { ReactElement } from "react";
 
-export type Page = {
+export type InternalPage = {
     name: string,
     content: ReactElement
 }
 
-export type PageList = Array<Page>
-
 export type Content = {
     current: string,
 };
+
+export type ExternalPage = {
+    name: string,
+    content: string
+}
 

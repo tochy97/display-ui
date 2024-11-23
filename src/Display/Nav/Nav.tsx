@@ -7,21 +7,19 @@ import {
   subNavContainer,
 } from "./model/classnames";
 import ContentController from "../apollo/controller/controller";
-import { PageList } from "../type";
+import { InternalPage } from "../../type";
 
 type Props = {
-  pageList: PageList,
+  list: Array<InternalPage>,
   title: string
 }
 
-export default function Nav({pageList, title}: Props) {
+export default function Nav({ list, title }: Props) {
   const [subVisible, setSubVisible] = useState<boolean>(false);
   const navRef = useRef<HTMLDivElement>(null);
 
-  const { changeContent } = ContentController();
-
   const changeView = async (current: string) => {
-    changeContent(current);
+    ContentController().changeContent(current);
     setSubVisible(false);
     document.body.style.overflow = "scroll";
   };
@@ -35,7 +33,10 @@ export default function Nav({pageList, title}: Props) {
         >
           {title}
         </div>
-        {window.innerWidth < 1024 ? (
+        {
+        window.innerWidth < 1024 
+        ? 
+        (
           <>
             <div
               className={`h-auto visible cursor-pointer mt-2 ${navComponentContainer}`}
@@ -49,19 +50,21 @@ export default function Nav({pageList, title}: Props) {
             </div>
             {subVisible && (
               <div className={subNavContainer}>{
-                pageList.map((element, index) => 
-                  <div key={index}>
-                    {element.name}
+                    list.map((content, index) =>
+                      <div key={index} onClick={() => changeView(content.name)}>
+                    {content.name}
                   </div>
                 )
               }</div>
             )}
           </>
-        ) : (
+        ) 
+        : 
+        (
           <div className={"flex"}>{
-            pageList.map((element, index) => 
-              <div key={index}>
-                {element.name}
+                list.map((content, index) =>
+              <div key={index} onClick={() => changeView(content.name)}>
+                {content.name}
               </div>
             )
           }</div>
