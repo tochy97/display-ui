@@ -1,6 +1,6 @@
 import { container } from "./model/classNames";
-import { GET_CONTENT } from "../apollo/model/queries";
-import ContentController from "../apollo/controller/controller";
+import { GET_CONTENT } from "../apollo/queries";
+import ContentController from "../apollo/controller";
 import { ReactNode, useState } from "react";
 import { InternalPage } from "../../type";
 
@@ -18,7 +18,9 @@ export default function Content({ list }: Props) {
   return (
       <main className={container}>
         {
-          list.find(ele => (ele.name === ContentController().current))?.content
+          list.find(ele => (ele.name === ContentController().current))?.content 
+          ??
+        notFound + " " + ContentController().current
         }
       </main>
   );

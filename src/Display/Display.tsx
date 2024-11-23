@@ -22,7 +22,6 @@ export default function Display({ contentList, title, footerList }: Props) {
         <ApolloProvider client={client}>
             <Nav list={contentList} title={title} />
             <Content list={contentList} />
-            <Footer list={footerList} />
         </ApolloProvider>
     )
 }

@@ -1,6 +1,6 @@
 import { useQuery } from '@apollo/client';
-import { GET_CONTENT } from '../model/queries';
-import { contentVar } from '../apollo';
+import { GET_CONTENT } from './queries';
+import { contentVar } from './apollo';
 
 export default function ContentController() {
   const { data, loading } = useQuery(GET_CONTENT);

@@ -24,7 +24,7 @@ function App3({ }) {
 
 let list: Array<InternalPage> = [
     {
-        name: "",
+        name: "Home",
         content: <App1 />
     },
     {

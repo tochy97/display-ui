@@ -6,7 +6,7 @@ import {
   navComponentContainer,
   subNavContainer,
 } from "./model/classnames";
-import ContentController from "../apollo/controller/controller";
+import ContentController from "../apollo/controller";
 import { InternalPage } from "../../type";
 
 type Props = {
@@ -17,6 +17,7 @@ type Props = {
 export default function Nav({ list, title }: Props) {
   const [subVisible, setSubVisible] = useState<boolean>(false);
   const navRef = useRef<HTMLDivElement>(null);
+  ContentController().changeContent("Home");
 
   const changeView = async (current: string) => {
     ContentController().changeContent(current);
