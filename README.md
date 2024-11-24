@@ -108,7 +108,7 @@ type Props = {
 
 ```
 
-### Floaters
+## Floaters
 ### Usage
 ```js
 import ReactDOM from 'react-dom/client';
