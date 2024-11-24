@@ -1,12 +1,6 @@
-# @egeonu/responsive-react
+# Display-UI
 
 This is a node react UI display package including a nav, content, footer as a single page application. The main goal is to simplify content loading and it is completely responsive. 
-
-## Installation
-
-```bash
-npm install @egeonu/responsive-react
-```
 
 ## Usage
 
@@ -14,7 +8,7 @@ npm install @egeonu/responsive-react
 
 ```tsx
 import ReactDOM from 'react-dom/client';
-import Display from @egeonu/responsive-react
+import Display from "./Display/Display"
 
 let list: Array<InternalPage> = [
     {

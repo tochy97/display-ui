@@ -1,13 +1,12 @@
 import { useRef, useState } from "react";
-import { IoOptionsOutline, IoClose } from "react-icons/io5";
 
 import {
   navBar,
   navComponentContainer,
   subNavContainer,
 } from "./classnames";
-import ContentController from "../apollo/controller";
-import { InternalPage } from "../../type";
+import Controller from "../../controller/controller";
+import { InternalPage } from "../../model/type";
 
 type Props = {
   list: Array<InternalPage>,
@@ -17,11 +16,9 @@ type Props = {
 export default function Nav({ list, title }: Props) {
   const [subVisible, setSubVisible] = useState<boolean>(false);
   const navRef = useRef<HTMLDivElement>(null);
-  const { changeContent, current } = ContentController();
+  const { changeContent } = Controller();
   const changeView = async (current_change: string) => {
-    console.log(current_change + " : " + current)
     changeContent(current_change);
-    console.log(current_change + " : " + current)
 
     setSubVisible(false);
     document.body.style.overflow = "scroll";
@@ -32,7 +29,6 @@ export default function Nav({ list, title }: Props) {
       <nav className={navBar} ref={navRef}>
         <div
           className={navComponentContainer}
-          role="navComponent0"
           onClick={() => changeView("")}
         >
           {title}
@@ -114,7 +110,8 @@ export default function Nav({ list, title }: Props) {
                 <div className={subNavContainer}>
                   {
                     list.map((content, index) =>
-                      <div key={index} onClick={() => changeView(content.name)}>
+                      content.name &&
+                      <div key={index} onClick={() => changeView(content.name)} className={navComponentContainer}>
                         {content.name}
                       </div>
                     )
@@ -125,7 +122,8 @@ export default function Nav({ list, title }: Props) {
             :
             <div className={"flex"}>{
               list.map((content, index) =>
-                <div key={index} onClick={() => changeView(content.name)} role={"navComponent"+(index+1)}>
+                content.name &&
+                <div key={index} onClick={() => changeView(content.name)} className={navComponentContainer}>
                   {content.name}
                 </div>
               )

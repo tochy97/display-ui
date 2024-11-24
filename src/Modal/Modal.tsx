@@ -5,6 +5,7 @@ import { modalContainer, modalContentContainer, modalHeaderContainer, closeButto
 type Props = {
   enableOnClick: boolean;
   trigger?: ReactNode;
+  type: string;
   content: ReactNode;
   header?: ReactNode;
   closeButtonclass?: string;
@@ -15,7 +16,7 @@ type Props = {
   left?: string;
 };
 
-export default function Modal({ enableOnClick, trigger, header, content, closeButtonclass, modalContainerClass, width, height, top, left }: Props) {
+export default function Modal({ enableOnClick, trigger, type, header, content, closeButtonclass, modalContainerClass, width, height, top, left }: Props) {
   const [visible, setVisible] = useState<boolean>(false);
   const modalRef: RefObject<HTMLDivElement> = createRef();
 
@@ -65,10 +66,10 @@ export default function Modal({ enableOnClick, trigger, header, content, closeBu
           className={`
                         ${modalContainer}
                         ${modalContainerClass}
-                        top-${t} 
-                        left-${l} 
-                        w-${w} 
-                        h-${h} 
+                        top-[${t}] 
+                        left-[${l}] 
+                        w-[${w}] 
+                        h-[${h}] 
                         rounded-lg`}
         >
           {header && (

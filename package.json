@@ -1,5 +1,5 @@
 {
-  "name": "@egeonu/responsive-react",
+  "name": "display-ui",
   "version": "0.1.0",
   "main": "src/index.tsx",
   "files": [
@@ -11,8 +11,6 @@
   "dependencies": {
     "@apollo/client": "^3.11.10",
     "@babel/plugin-proposal-private-property-in-object": "^7.16.7",
-    "@egeonu/display-ui": "file:",
-    "@egeonu/responsive-react": "file:",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.5.2",
@@ -20,6 +18,7 @@
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "autoprefixer": "^10.4.20",
+    "display-ui": "file:",
     "graphql": "^16.9.0",
     "postcss": "^8.4.49",
     "ra-data-graphql": "^5.4.0",

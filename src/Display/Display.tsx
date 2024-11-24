@@ -1,26 +1,20 @@
-import { ApolloClient, ApolloProvider, NormalizedCacheObject } from "@apollo/client";
-
-import Nav from './Nav/Nav'
-import Content from './Content/Content'
-import Footer from './Footer/Footer'
-import { ExternalPage, InternalPage } from "../type";
-import { localCache } from "./apollo/apollo";
+import Nav from './view/Nav/Nav'
+import Content from './view/Content/Content'
+import Footer from './view/Footer/Footer'
+import { InternalPage } from "./model/type";
 
 type Props = {
     contentList: Array<InternalPage>,
     title: string,
-    footerList: Array<InternalPage | ExternalPage>
 }
 
-const client: ApolloClient<NormalizedCacheObject> = new ApolloClient({
-    connectToDevTools: true,
-    cache: localCache,
-});
 
-export default function Display({ contentList, title, footerList }: Props) {
+export default function Display({ contentList, title }: Props) {
     return (
-        <ApolloProvider client={client}>
+        <>
             <Nav list={contentList} title={title} />
-        </ApolloProvider>
+            <Content list={contentList} />
+            <Footer />
+        </>
     )
 }

@@ -1,7 +1,6 @@
 import { container } from "./classNames";
-import ContentController from "../apollo/controller";
-import { ReactNode, useState } from "react";
-import { InternalPage } from "../../type";
+import Controller from "../../controller/controller";
+import { InternalPage } from "../../model/type";
 
 type Props = {
   list: Array<InternalPage>,
@@ -13,7 +12,7 @@ type Props = {
  */
 export default function Content({ list }: Props) {
   let notFound = list.find(ele => (ele.name === "NotFound"))?.content ?? <>Not Found</>
-  const { current } = ContentController();
+  const { current } = Controller();
   return (
       <main className={container}>
         {
