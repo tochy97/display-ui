@@ -17,10 +17,12 @@ type Props = {
 export default function Nav({ list, title }: Props) {
   const [subVisible, setSubVisible] = useState<boolean>(false);
   const navRef = useRef<HTMLDivElement>(null);
-  ContentController().changeContent("Home");
+  const { changeContent, current } = ContentController();
+  const changeView = async (current_change: string) => {
+    console.log(current_change + " : " + current)
+    changeContent(current_change);
+    console.log(current_change + " : " + current)
 
-  const changeView = async (current: string) => {
-    ContentController().changeContent(current);
     setSubVisible(false);
     document.body.style.overflow = "scroll";
   };
@@ -31,7 +33,7 @@ export default function Nav({ list, title }: Props) {
         <div
           className={navComponentContainer}
           role="navComponent0"
-          onClick={() => changeView("Home")}
+          onClick={() => changeView("")}
         >
           {title}
         </div>

@@ -3,9 +3,9 @@ import { GET_CONTENT } from './queries';
 import { contentVar } from './apollo';
 
 export default function ContentController() {
-  const { data, loading } = useQuery(GET_CONTENT);
+  const { data } = useQuery(GET_CONTENT);
   return {
-    current: data?.content?.current,
+    current: data.content.current,
     changeContent(current: string) {
       contentVar({ 
         current: current,

@@ -3,7 +3,7 @@ import { InMemoryCache, makeVar } from "@apollo/client";
 import { Content } from "../../type";
 
 const initialContent: Content = {
-  current: "Home"
+  current: ""
 };
 
 export const contentVar = makeVar<Content>(initialContent);
