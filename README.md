@@ -2,10 +2,8 @@
 
 This is a node react UI display package including a nav, content, footer as a single page application. The main goal is to simplify content loading and it is completely responsive. 
 
-## Usage
-
-### Display
-
+## Display
+### Usage
 ```tsx
 import ReactDOM from 'react-dom/client';
 import Display from "./Display/Display"
@@ -29,8 +27,14 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 
-root.render(<Display contentList={list} title={'Test'} footerList={[]} />);
+
+root.render(
+  <ApolloProvider client={client}>
+    <App />
+  </ApolloProvider>
+);
 ```
+### Type
 ```js
 type Props = {
     contentList: Array<InternalPage>, // List of ReactElements
@@ -39,35 +43,45 @@ type Props = {
 }
 ```
 
-### Modal
-
+## Modal
+### Usage
 ```tsx
-<Modal
-  enableOnClick={true}
-  trigger={
-    <div>
-        Trigger
-    </div>
-  }
-  content={
-    <>
-      <select>
-        <option value="test">
-          Test
-        </option>
-      </select>
-      <button>
-        Go
-      </button>
-    </>
-  }
-  width="[100px]"
-  height="[50px]"
-  top="0"
-  left="0"
-/>
-```
+import ReactDOM from 'react-dom/client';
+import Display from "./Modal/Modal"
 
+const root = ReactDOM.createRoot(
+  document.getElementById('root') as HTMLElement
+);
+
+
+root.render(
+    <Modal
+      enableOnClick={true}
+      trigger={
+        <div>
+            Trigger
+        </div>
+      }
+      content={
+        <>
+          <select>
+            <option value="test">
+              Test
+            </option>
+          </select>
+          <button>
+            Go
+          </button>
+        </>
+      }
+      width="[100px]"
+      height="[50px]"
+      top="0"
+      left="0"
+    />
+);
+```
+### Type
 ```js
 type Props = {
   enableOnClick: boolean; // Disables trigger boolean
@@ -93,13 +107,25 @@ type Props = {
 };
 
 ```
+
+### Floaters
+### Usage
+```js
+import ReactDOM from 'react-dom/client';
+import Display from "./Modal/Modal"
+
+const root = ReactDOM.createRoot(
+  document.getElementById('root') as HTMLElement
+);
+
+
+root.render(
+  <Floaters />
+);
+```
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first
 to discuss what you would like to change.
 
 Please make sure to update tests as appropriate.
-
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
