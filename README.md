@@ -30,7 +30,7 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <ApolloProvider client={client}>
-    <App />
+    <Display contentList={list} title={'Home'} />      
   </ApolloProvider>
 );
 ```
